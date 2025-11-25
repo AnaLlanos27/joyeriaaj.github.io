@@ -564,7 +564,24 @@
       productos, carrito, agregarAlCarritoById, openDetalle, navigateTo
     };
   </script>
-  <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
-  <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmicoegd1005k1197b2r1toq6'></zapier-interfaces-chatbot-embed> 
+  
+  <script>
+  // Cargar el script de Zapier dinámicamente
+  (function() {
+    const zapierScript = document.createElement("script");
+    zapierScript.src = "https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js";
+    zapierScript.type = "module";
+    zapierScript.async = true;
+    document.head.appendChild(zapierScript);
+
+    // Cuando el script esté listo, insertar el widget
+    zapierScript.onload = function () {
+      const bot = document.createElement("zapier-interfaces-chatbot-embed");
+      bot.setAttribute("is-popup", "true");
+      bot.setAttribute("chatbot-id", "cmicoegd1005k1197b2r1toq6");
+      document.body.appendChild(bot);
+    };
+  })();
+</script>
 </body>
 </html>
