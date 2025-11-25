@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Joyería AJ - Landing</title>
+  <!-- Tailwind Play CDN (ideal para prototipos / landing) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Ajustes menores para el demo */
+    :root {
+      --rose: #f43f5e;
+      --rose-300: #fb7185;
+    }
+    .font-serif { font-family: "Georgia", "Times New Roman", serif; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-rose-50">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center">
+          <button id="mobileMenuBtn" class="lg:hidden mr-4 text-gray-600" aria-label="menu">
+            <!-- Menu Icon -->
+            <svg id="menuOpenIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="menuCloseIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+          <h1 id="brand" class="text-3xl font-serif text-rose-300 cursor-pointer" style="letter-spacing:0.04em">AJ</h1>
+        </div>
+
+        <nav id="desktopNav" class="hidden lg:flex space-x-8">
+          <button data-page="inicio" class="text-gray-700 hover:text-rose-300 transition">Inicio</button>
+          <button data-page="catalogo" class="text-gray-700 hover:text-rose-300 transition">Catálogo</button>
+          <button data-page="sobre-nosotros" class="text-gray-700 hover:text-rose-300 transition">Sobre Nosotros</button>
+          <button data-page="contacto" class="text-gray-700 hover:text-rose-300 transition">Contacto</button>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <button id="wishBtn" title="Favoritos" class="text-gray-600 hover:text-rose-300 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <button id="authBtn" title="Cuenta" class="text-gray-600 hover:text-rose-300 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5.5 20a7.5 7.5 0 0 1 13 0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="8" r="4" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <button id="cartBtn" title="Carrito" class="relative text-gray-600 hover:text-rose-300 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1" /><circle cx="19" cy="20" r="1" /></svg>
+            <span id="cartCount" class="absolute -top-2 -right-2 bg-rose-300 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <nav id="mobileNav" class="lg:hidden pb-4 space-y-2 hidden">
+        <button data-page="inicio" class="block w-full text-left py-2 text-gray-700 hover:text-rose-300">Inicio</button>
+        <button data-page="catalogo" class="block w-full text-left py-2 text-gray-700 hover:text-rose-300">Catálogo</button>
+        <button data-page="sobre-nosotros" class="block w-full text-left py-2 text-gray-700 hover:text-rose-300">Sobre Nosotros</button>
+        <button data-page="contacto" class="block w-full text-left py-2 text-gray-700 hover:text-rose-300">Contacto</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main" class="flex-1">
+    <!-- Inicio -->
+    <section id="page-inicio" class="page bg-gradient-to-r from-rose-50 to-amber-50 py-20 px-4">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-5xl md:text-6xl font-serif text-gray-800 mb-6">Elegancia Atemporal</h2>
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Descubre joyas únicas que cuentan tu historia. Cada pieza es creada con amor y dedicación.</p>
+        <button id="explorarBtn" class="bg-rose-300 text-white px-8 py-3 rounded-full hover:bg-rose-400 transition shadow-lg">Explorar Colección</button>
+      </div>
+
+      <div class="py-16 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+          <h3 class="text-3xl font-serif text-center text-gray-800 mb-12">Más Vendidos</h3>
+          <div id="masVendidosGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+        </div>
+      </div>
+
+      <section class="py-16 px-4 bg-amber-50">
+        <div class="max-w-4xl mx-auto text-center">
+          <h3 class="text-3xl font-serif text-gray-800 mb-6">Nuestra Historia</h3>
+          <p class="text-gray-600 text-lg leading-relaxed">AJ nació del sueño de crear joyas que celebren la belleza única de cada mujer. Con más de 10 años de experiencia, combinamos técnicas artesanales tradicionales con diseños contemporáneos para crear piezas que son verdaderas obras de arte.</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- Catalogo -->
+    <section id="page-catalogo" class="page py-12 px-4 bg-rose-50 min-h-screen hidden">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-serif text-center text-gray-800 mb-8">Nuestra Colección</h2>
+        <div class="flex flex-wrap justify-center gap-4 mb-12" id="filtros"></div>
+        <div id="catalogGrid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- Detalle -->
+    <section id="page-detalle" class="page py-12 px-4 bg-white min-h-screen hidden">
+      <div class="max-w-6xl mx-auto">
+        <button id="backToCatalog" class="text-rose-300 mb-6 hover:underline">← Volver al catálogo</button>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div id="detalleImagen" class="bg-rose-50 rounded-lg h-96 flex items-center justify-center text-9xl"></div>
+          <div>
+            <h2 id="detalleNombre" class="text-3xl font-serif text-gray-800 mb-4"></h2>
+            <p id="detallePrecio" class="text-3xl text-rose-400 font-bold mb-6"></p>
+            <p id="detalleDescripcion" class="text-gray-600 mb-6 leading-relaxed"></p>
+
+            <div class="mb-6">
+              <label class="block text-gray-700 mb-2">Talla:</label>
+              <select id="tallaSelect" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-rose-300">
+                <option>Seleccionar talla</option>
+                <option>5</option><option>6</option><option>7</option><option>8</option>
+              </select>
+            </div>
+
+            <button id="addToCartFromDetail" class="w-full bg-rose-300 text-white py-3 rounded-full hover:bg-rose-400 transition text-lg">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrito -->
+    <section id="page-carrito" class="page py-12 px-4 bg-rose-50 min-h-screen hidden">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-4xl font-serif text-gray-800 mb-8">Tu Carrito</h2>
+        <div id="carritoContent"></div>
+      </div>
+    </section>
+
+    <!-- Autenticación -->
+    <section id="page-auth" class="page py-12 px-4 bg-rose-50 min-h-screen hidden">
+      <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8">
+        <div class="flex mb-6 border-b">
+          <button id="loginTab" class="flex-1 pb-3 border-b-2 border-rose-300 text-rose-300">Iniciar Sesión</button>
+          <button id="registerTab" class="flex-1 pb-3 text-gray-500">Registro</button>
+        </div>
+
+        <div id="loginForm" class="space-y-4">
+          <div><label class="block text-gray-700 mb-2">Email</label><input type="email" id="loginEmail" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="tu@email.com"></div>
+          <div><label class="block text-gray-700 mb-2">Contraseña</label><input type="password" id="loginPassword" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="••••••••"></div>
+          <button id="loginBtn" class="w-full bg-rose-300 text-white py-3 rounded-full hover:bg-rose-400 transition">Iniciar Sesión</button>
+        </div>
+
+        <div id="registerForm" class="space-y-4 hidden">
+          <div><label class="block text-gray-700 mb-2">Nombre Completo</label><input type="text" id="regName" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="Tu nombre"></div>
+          <div><label class="block text-gray-700 mb-2">Email</label><input type="email" id="regEmail" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="tu@email.com"></div>
+          <div><label class="block text-gray-700 mb-2">Contraseña</label><input type="password" id="regPassword" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="••••••••"></div>
+          <button id="registerBtn" class="w-full bg-rose-300 text-white py-3 rounded-full hover:bg-rose-400 transition">Crear Cuenta</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Nosotros (simple) -->
+    <section id="page-sobre-nosotros" class="page py-12 px-4 bg-white min-h-screen hidden">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-serif text-gray-800 mb-6">Sobre Nosotros</h2>
+        <p class="text-gray-600 leading-relaxed">AJ es una marca artesanal dedicada a crear joyas que cuentan historias. Calidad, diseño y cariño en cada detalle.</p>
+      </div>
+    </section>
+
+    <!-- Contacto (simple) -->
+    <section id="page-contacto" class="page py-12 px-4 bg-rose-50 min-h-screen hidden">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-serif text-gray-800 mb-6">Contacto</h2>
+        <p class="text-gray-600">Escríbenos a <strong>contacto@joyeria-aj.com</strong> o llámanos al <strong>+57 300 123 4567</strong>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-2xl font-serif text-rose-300 mb-4">AJ</h3>
+        <p class="text-gray-300">Elegancia y sofisticación en cada pieza. Creando joyas que cuentan historias únicas.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Contacto</h4>
+        <p class="text-gray-300 mb-2">📧 contacto@joyeria-aj.com</p>
+        <p class="text-gray-300 mb-2">📱 +57 300 123 4567</p>
+        <p class="text-gray-300">📍 Bogotá, Colombia</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Síguenos</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-300 hover:text-rose-300 transition">Instagram</a>
+          <a href="#" class="text-gray-300 hover:text-rose-300 transition">Facebook</a>
+          <a href="#" class="text-gray-300 hover:text-rose-300 transition">Pinterest</a>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+      <p>© 2025 Joyería AJ. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript (app logic) -->
+  <script>
+    /*************************
+     * Datos de productos
+     *************************/
+    const productos = [
+      { id: 1, nombre: 'Anillo Solitario Elegance', categoria: 'anillos', precio: 2500, imagen: '💍', descripcion: 'Anillo de oro rosa 18k con diamante central' },
+      { id: 2, nombre: 'Collar Perla Clásico', categoria: 'collares', precio: 1800, imagen: '📿', descripcion: 'Collar de perlas naturales con broche de oro' },
+      { id: 3, nombre: 'Pulsera Infinity', categoria: 'pulseras', precio: 1200, imagen: '⭕', descripcion: 'Pulsera de plata con símbolo infinity' },
+      { id: 4, nombre: 'Aretes Gota Diamante', categoria: 'aretes', precio: 3200, imagen: '💎', descripcion: 'Aretes colgantes con diamantes engastados' },
+      { id: 5, nombre: 'Anillo Compromiso Royal', categoria: 'anillos', precio: 4500, imagen: '💍', descripcion: 'Anillo de compromiso con halo de diamantes' },
+      { id: 6, nombre: 'Collar Corazón Rosa', categoria: 'collares', precio: 950, imagen: '💖', descripcion: 'Collar delicado con dije de corazón en oro rosa' },
+      { id: 7, nombre: 'Pulsera Tennis', categoria: 'pulseras', precio: 2800, imagen: '✨', descripcion: 'Pulsera tennis con diamantes' },
+      { id: 8, nombre: 'Aretes Botón Perla', categoria: 'aretes', precio: 850, imagen: '⚪', descripcion: 'Aretes de perla natural con base de oro' },
+    ];
+
+    /*************************
+     * Estado de la app
+     *************************/
+    let paginaActual = 'inicio';
+    let menuAbierto = false;
+    let carrito = []; // {id, nombre, precio, imagen, cantidad}
+    let categoriaFiltro = 'todos';
+    let productoDetalle = null;
+    let usuario = null;
+    let formularioActivo = 'login';
+
+    /*************************
+     * Utilidades
+     *************************/
+    const formatPrice = (n) => '$' + Number(n).toLocaleString();
+
+    /*************************
+     * DOM references
+     *************************/
+    const pages = {
+      inicio: document.getElementById('page-inicio'),
+      catalogo: document.getElementById('page-catalogo'),
+      detalle: document.getElementById('page-detalle'),
+      carrito: document.getElementById('page-carrito'),
+      auth: document.getElementById('page-auth'),
+      'sobre-nosotros': document.getElementById('page-sobre-nosotros'),
+      contacto: document.getElementById('page-contacto'),
+    };
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const menuOpenIcon = document.getElementById('menuOpenIcon');
+    const menuCloseIcon = document.getElementById('menuCloseIcon');
+    const cartCountEl = document.getElementById('cartCount');
+
+    /*************************
+     * Renderers
+     *************************/
+    function renderMasVendidos() {
+      const grid = document.getElementById('masVendidosGrid');
+      grid.innerHTML = '';
+      productos.slice(0,4).forEach(p => {
+        const card = document.createElement('div');
+        card.className = "bg-rose-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer";
+        card.innerHTML = `
+          <div class="h-48 flex items-center justify-center text-6xl bg-white">${p.imagen}</div>
+          <div class="p-4">
+            <h4 class="font-semibold text-gray-800 mb-2">${p.nombre}</h4>
+            <p class="text-rose-400 font-bold text-lg">${formatPrice(p.precio)}</p>
+            <button data-id="${p.id}" class="w-full mt-3 bg-rose-300 text-white py-2 rounded-full hover:bg-rose-400 transition addBtn">Agregar al Carrito</button>
+          </div>
+        `;
+        card.addEventListener('click', (e) => {
+          if (e.target.classList.contains('addBtn')) return;
+          openDetalle(p.id);
+        });
+        grid.appendChild(card);
+      });
+      // add listeners to add buttons
+      grid.querySelectorAll('.addBtn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = Number(btn.getAttribute('data-id'));
+          agregarAlCarritoById(id);
+        });
+      });
+    }
+
+    function renderFiltros() {
+      const filtros = ['todos', 'anillos', 'collares', 'pulseras', 'aretes'];
+      const cont = document.getElementById('filtros');
+      cont.innerHTML = '';
+      filtros.forEach(cat => {
+        const b = document.createElement('button');
+        b.className = `px-6 py-2 rounded-full transition ${categoriaFiltro===cat ? 'bg-rose-300 text-white' : 'bg-white text-gray-700 hover:bg-rose-100'}`;
+        b.innerText = cat.charAt(0).toUpperCase() + cat.slice(1);
+        b.addEventListener('click', () => {
+          categoriaFiltro = cat;
+          renderCatalogo();
+          renderFiltros();
+        });
+        cont.appendChild(b);
+      });
+    }
+
+    function renderCatalogo() {
+      const grid = document.getElementById('catalogGrid');
+      const productosFiltrados = categoriaFiltro === 'todos' ? productos : productos.filter(p => p.categoria === categoriaFiltro);
+      grid.innerHTML = '';
+      productosFiltrados.forEach(producto => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer";
+        card.innerHTML = `
+          <div class="h-48 flex items-center justify-center text-6xl bg-rose-50">${producto.imagen}</div>
+          <div class="p-4">
+            <h4 class="font-semibold text-gray-800 mb-2">${producto.nombre}</h4>
+            <p class="text-rose-400 font-bold text-lg">${formatPrice(producto.precio)}</p>
+            <button data-id="${producto.id}" class="w-full mt-3 bg-rose-300 text-white py-2 rounded-full hover:bg-rose-400 transition addBtn">Agregar al Carrito</button>
+          </div>
+        `;
+        card.addEventListener('click', (e) => {
+          if (e.target.classList.contains('addBtn')) return;
+          openDetalle(producto.id);
+        });
+        grid.appendChild(card);
+      });
+      // listeners for add buttons
+      grid.querySelectorAll('.addBtn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = Number(btn.getAttribute('data-id'));
+          agregarAlCarritoById(id);
+        });
+      });
+    }
+
+    function renderDetalle(producto) {
+      document.getElementById('detalleImagen').innerText = producto.imagen;
+      document.getElementById('detalleNombre').innerText = producto.nombre;
+      document.getElementById('detallePrecio').innerText = formatPrice(producto.precio);
+      document.getElementById('detalleDescripcion').innerText = producto.descripcion;
+      document.getElementById('addToCartFromDetail').onclick = () => {
+        agregarAlCarritoById(producto.id);
+        navigateTo('carrito');
+      };
+    }
+
+    function renderCarrito() {
+      const container = document.getElementById('carritoContent');
+      if (carrito.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-20 bg-white rounded-lg">
+            <p class="text-gray-600 text-xl mb-6">Tu carrito está vacío</p>
+            <button id="irComprar" class="bg-rose-300 text-white px-8 py-3 rounded-full hover:bg-rose-400 transition">Ir a Comprar</button>
+          </div>
+        `;
+        document.getElementById('irComprar').onclick = () => navigateTo('catalogo');
+        cartCountUpdate();
+        return;
+      }
+
+      // Build cart view
+      const leftItems = carrito.map(item => `
+        <div class="bg-white rounded-lg p-6 flex items-center gap-6 shadow-md">
+          <div class="text-5xl">${item.imagen}</div>
+          <div class="flex-1">
+            <h4 class="font-semibold text-gray-800 mb-1">${item.nombre}</h4>
+            <p class="text-rose-400 font-bold">${formatPrice(item.precio)}</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <button data-op="dec" data-id="${item.id}" class="qtyBtn w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center hover:bg-rose-200">-</button>
+            <span class="w-8 text-center font-semibold">${item.cantidad}</span>
+            <button data-op="inc" data-id="${item.id}" class="qtyBtn w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center hover:bg-rose-200">+</button>
+          </div>
+          <button data-id="${item.id}" class="removeBtn text-gray-400 hover:text-red-500">🗑️</button>
+        </div>
+      `).join('');
+
+      const subtotal = carrito.reduce((s,i) => s + i.precio*i.cantidad, 0);
+      const envio = 200;
+      const total = subtotal + envio;
+
+      container.innerHTML = `
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-4">${leftItems}</div>
+          <div class="bg-white rounded-lg p-6 shadow-md h-fit">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Resumen</h3>
+            <div class="space-y-3 mb-6">
+              <div class="flex justify-between"><span class="text-gray-600">Subtotal:</span><span class="font-semibold">${formatPrice(subtotal)}</span></div>
+              <div class="flex justify-between"><span class="text-gray-600">Envío:</span><span class="font-semibold">${formatPrice(envio)}</span></div>
+              <div class="border-t pt-3 flex justify-between text-lg"><span class="font-bold text-gray-800">Total:</span><span class="font-bold text-rose-400">${formatPrice(total)}</span></div>
+            </div>
+            <button class="w-full bg-rose-300 text-white py-3 rounded-full hover:bg-rose-400 transition">Proceder al Pago</button>
+          </div>
+        </div>
+      `;
+
+      // attach qty & remove listeners
+      container.querySelectorAll('.qtyBtn').forEach(b => {
+        b.addEventListener('click', () => {
+          const op = b.getAttribute('data-op');
+          const id = Number(b.getAttribute('data-id'));
+          if (op === 'inc') actualizarCantidad(id, getCantidad(id)+1);
+          else actualizarCantidad(id, getCantidad(id)-1);
+        });
+      });
+      container.querySelectorAll('.removeBtn').forEach(b => {
+        b.addEventListener('click', () => {
+          const id = Number(b.getAttribute('data-id'));
+          eliminarDelCarrito(id);
+        });
+      });
+
+      cartCountUpdate();
+    }
+
+    function cartCountUpdate() {
+      const count = carrito.length;
+      if (count > 0) {
+        cartCountEl.classList.remove('hidden');
+        cartCountEl.textContent = count;
+      } else {
+        cartCountEl.classList.add('hidden');
+      }
+    }
+
+    /*************************
+     * Carrito functions
+     *************************/
+    function getCantidad(id) {
+      const item = carrito.find(i => i.id === id);
+      return item ? item.cantidad : 0;
+    }
+
+    function agregarAlCarritoById(id) {
+      const producto = productos.find(p => p.id === id);
+      if (!producto) return;
+      const itemExistente = carrito.find(item => item.id === id);
+      if (itemExistente) {
+        carrito = carrito.map(item => item.id === id ? { ...item, cantidad: item.cantidad + 1 } : item);
+      } else {
+        carrito.push({ id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen, cantidad: 1 });
+      }
+      cartCountUpdate();
+      // show a small visual confirmation (toast-like)
+      toast(`${producto.nombre} agregado al carrito`);
+    }
+
+    function actualizarCantidad(id, cantidad) {
+      if (cantidad <= 0) {
+        eliminarDelCarrito(id);
+      } else {
+        carrito = carrito.map(item => item.id === id ? { ...item, cantidad } : item);
+      }
+      renderCarrito();
+    }
+
+    function eliminarDelCarrito(id) {
+      carrito = carrito.filter(item => item.id !== id);
+      renderCarrito();
+    }
+
+    /*************************
+     * Navegación
+     *************************/
+    function showOnly(pageKey) {
+      Object.keys(pages).forEach(k => {
+        if (pages[k]) pages[k].classList.toggle('hidden', k !== pageKey);
+      });
+    }
+
+    function navigateTo(pageKey) {
+      paginaActual = pageKey;
+      showOnly(pageKey);
+      if (pageKey === 'catalogo') {
+        renderCatalogo();
+        renderFiltros();
+      } else if (pageKey === 'inicio') {
+        renderMasVendidos();
+      } else if (pageKey === 'carrito') {
+        renderCarrito();
+      } else if (pageKey === 'auth') {
+        // show active form
+        document.getElementById('loginForm').classList.toggle('hidden', formularioActivo !== 'login');
+        document.getElementById('registerForm').classList.toggle('hidden', formularioActivo !== 'registro');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /*************************
+     * Detalle
+     *************************/
+    function openDetalle(id) {
+      const p = productos.find(x => x.id === id);
+      if (!p) return;
+      productoDetalle = p;
+      renderDetalle(p);
+      navigateTo('detalle');
+    }
+
+    /*************************
+     * Small helpers: toast
+     *************************/
+    function toast(msg, ms = 1400) {
+      const t = document.createElement('div');
+      t.className = 'fixed bottom-8 right-8 bg-black text-white px-4 py-2 rounded shadow-lg opacity-90';
+      t.innerText = msg;
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), ms);
+    }
+
+    /*************************
+     * Events setup
+     *************************/
+    // Header buttons
+    document.getElementById('explorarBtn').addEventListener('click', () => navigateTo('catalogo'));
+    document.getElementById('brand').addEventListener('click', () => navigateTo('inicio'));
+
+    // desktop nav buttons
+    document.querySelectorAll('#desktopNav button').forEach(b => {
+      b.addEventListener('click', () => navigateTo(b.getAttribute('data-page')));
+    });
+
+    // mobile nav
+    document.querySelectorAll('#mobileNav button').forEach(b => {
+      b.addEventListener('click', () => {
+        navigateTo(b.getAttribute('data-page'));
+        toggleMobileMenu(false);
+      });
+    });
+
+    mobileMenuBtn.addEventListener('click', () => toggleMobileMenu(!menuAbierto));
+    function toggleMobileMenu(open) {
+      menuAbierto = open;
+      mobileNav.classList.toggle('hidden', !menuAbierto);
+      menuOpenIcon.classList.toggle('hidden', menuAbierto);
+      menuCloseIcon.classList.toggle('hidden', !menuAbierto);
+    }
+
+    // cart button
+    document.getElementById('cartBtn').addEventListener('click', () => navigateTo('carrito'));
+    // auth button
+    document.getElementById('authBtn').addEventListener('click', () => navigateTo('auth'));
+
+    // tabs for auth
+    document.getElementById('loginTab').addEventListener('click', () => {
+      formularioActivo = 'login';
+      document.getElementById('loginForm').classList.remove('hidden');
+      document.getElementById('registerForm').classList.add('hidden');
+      document.getElementById('loginTab').classList.add('text-rose-300','border-b-2','border-rose-300');
+      document.getElementById('registerTab').classList.remove('text-rose-300','border-b-2','border-rose-300');
+    });
+    document.getElementById('registerTab').addEventListener('click', () => {
+      formularioActivo = 'registro';
+      document.getElementById('loginForm').classList.add('hidden');
+      document.getElementById('registerForm').classList.remove('hidden');
+      document.getElementById('registerTab').classList.add('text-rose-300','border-b-2','border-rose-300');
+      document.getElementById('loginTab').classList.remove('text-rose-300','border-b-2','border-rose-300');
+    });
+
+    // back to catalog button in detail
+    document.getElementById('backToCatalog').addEventListener('click', () => navigateTo('catalogo'));
+
+    // initial render
+    renderMasVendidos();
+    renderFiltros();
+    renderCatalogo();
+    cartCountUpdate();
+
+    // (Optional) Expose some functions for debugging in console
+    window._app = {
+      productos, carrito, agregarAlCarritoById, openDetalle, navigateTo
+    };
+  </script>
+</body>
+</html>
